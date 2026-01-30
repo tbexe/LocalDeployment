@@ -51,3 +51,19 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 6. Access the application:
 - At: http://localhost
 
+# Run Tests (NOT TESTED YET SUBJECT TO CHANGE)
+
+### Windows
+
+1. Open Terminal in the Project folder of this repo
+```cmd
+cd {path}/LocalDeployment
+```
+2. Run The following command to run the tests
+```DOS
+    .\test-all.bat
+```
+3. It should take a few minutes to run but if sucsessfull you should see 
+```
+All tests finished successfully!
+```
