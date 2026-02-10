@@ -5,7 +5,7 @@ Repository configured To Pull from all Relevant repos for local deployment of en
 # Contributions
 
 ### DevOps
-- Author: Jed Leas
+Author: Jed Leas
 - My focus has been setting up the instances of the achirtecture designed by Daniel Jackson which included setting up the:
   1. Nginx (Reverse proxy)
   2. K3s
@@ -15,70 +15,116 @@ Repository configured To Pull from all Relevant repos for local deployment of en
 - As well as setting up all CI/CD workflows to handle 
     1. Automatic testing on push of main branch on each microservices repo
   2. Automatic Deployment onto k3s with zero downtime on compleation of automatic testing so broken code wont make it to deployment
-- And Sorting out bug fixes and connections between each microservices to eachother and the databases for both deployment and testings
+- And Sorting out bug fixes and connections between each microservices to eachother and the databases for both deployment and testings  
+               
+### Backend Services  
 
-### MicroServices
+#### API Gateway
+Author: Daniel Jackson
+- Setup this routing service to manage sending request to the right service, using pattern matching based on the URL.
+- Configured CORS so the production website and development environments can send requests to the backend.
+- Setup Authentication Security Filter that:
+  - Verifies token signature for authenticity
+  - Verifies token has not expired
+  - Written explicit paths that are exempt from authentication (E.G Endpoint Documentation Website)  
 
----
-#### API Gateway (Daniel Jackson)
-- Author: Daniel Jackson
-- Co Author: Robert Rainer
-- {Description here}
 
-#### User Service (Daniel Jackson)
-- Author: Daniel Jackson
-- Co Author: Robert Rainer
-- {Description here}
+#### User Service
+Author: Daniel Jackson
+- Setup Authentication Components:
+  - Created Refresh and Access Token Generation using Secret Key
+  - Created methods to extract user type and Id from access token
+  - Created endpoint for users and vendors to refresh their access token
+- Setup User Components:
+  - Created User Endpoints and specified the data required in the request
+  - Validated incoming request data at the DTO layer
+  - Defined the User and Streak database tables and linked them using Spring Boot JPA
+  - Wrote custom SQL queries using JPARepository
+  - Wrote business logic in the service layer that accesses the database
+  - Defined Custom Exceptions to improve visibility in the logs
+  - Setup a RabbitMQ Listener that receives updates to the streak
+  - Created a Component that generates a unique username using random adjectives and nouns
+ - Setup Vendor Components:
+   - Created Vendor Endpoints and specified the data required in the request
+   - Validated incoming request data at the DTO layer
+   - Defined the Vendor database table using Spring Boot JPA
+   - Wrote business logic in the Vendor Service layer that accesses the database
+- Added OpenAPI documentation to improve visibility of the backend for the front-end developers
+- Enforced Controller-Service-Repository model to improve consistency across services for developers
+- Setup Spring Boot Profiles to manage configurations for production, development and testing environments
 
 #### Product Service 
-- Author: Robert Rainer
-- Co Author: Daniel Jackson
-- {Description here}
+Author: Robert Rainer
 
-#### Forcast Service
-- Author: Alex Greasly
+
+Co Author: Daniel Jackson
+- Led code structure discussions with Robert Rainer about using the MVC model
+- Setup Bundle Components:
+  - Created Bundle Endpoints and specified the data required in the request
+  - Created endpoints that support pagination for SQL queries
+  - Validated incoming requests data at the DTO layer
+  - Wrote SQL Queries that joined multiple tables
+  - Defined Bundle and BundleProducts (joining table) database tables using Spring Boot JPA
+  - Wrote business logic in Bundle Service Layer that accesses the database
+  - Defined Custom Exceptions to improve visibility in the logs
+- Setup Reservation Components:
+  - Created Reservation Endpoints and specified the data required in the request
+  - Validated incoming request data at the DTO layer
+  - Defined Reservation and Claim code database tables and linked them
+  - Defined RabbitMQ configuration and published messages to the queue
+  - Defined Custom Exceptions to improve visibility in the logs
+  - Wrote business logic in the Reservation Service Layer that accesses the database
+- Added OpenAPI documentation to improve visibility of the backend for the front-end developers
+- Enforced Controller-Service-Repository model to improve consistency across services for developers 
+
+ 
+
+#### Forecast Service
+- Author: Alex Greasley
 - Co Author: Jed Leas
 - {Description here}
 
 --- 
 ## Website 
-- Author: Toby Becket
-- Co Authour: William Foulger
-- {
-  Author: Toby Beckett {
-  - My role was Team-Lead/Scrum-Master, Front end
-  - Created the Lofi Designs for the Login (supplier and user), register(Supplier and user), Orders, catalog, impact, and the report issue pages that are all on the user side of the website
-  - Created the user Login page: HTML, CSS and javascript
-  - Created the user Signup page: HTML, CSS and javascript
-  - Created the supplier Login page: HTML, CSS and javascript
-  - Created the supplier Signup page: HTML, CSS and javascript
-  - Created the users Catalog page: HTML, CSS and javascript
-  - Created the users Orders page: HTML, CSS and javascript
-  - Created the suppliers forecast page: HTML, CSS and javascript
-  - Created the index page: javascript and HTML
-  - Created the README file for the front end repository
-  - Being Team Lead, this included taking all the meeting notes and monitoring jira. This also included having frequent calls with the backend team to understand proguess and if any problems needed to be discussed in the coming team meeting.
-  }
+Author: Toby Beckett 
+- My role was Team-Lead/Scrum-Master, Front end
+- Created the Lofi Designs for the Login (supplier and user), register(Supplier and user), Orders, catalog, impact, and the report issue pages that are all on the user side of the website
+- Created the user Login page: HTML, CSS and javascript
+- Created the user Signup page: HTML, CSS and javascript
+- Created the supplier Login page: HTML, CSS and javascript
+- Created the supplier Signup page: HTML, CSS and javascript
+- Created the users Catalog page: HTML, CSS and javascript
+- Created the users Orders page: HTML, CSS and javascript
+- Created the suppliers forecast page: HTML, CSS and javascript
+- Created the index page: javascript and HTML
+- Created the README file for the front end repository
+- Being Team Lead, this included taking all the meeting notes and monitoring jira. This also included having frequent calls with the backend team to understand proguess and if any problems needed to be discussed in the coming team meeting.
 
-  Author: William Foulger {
+Author: William Foulger 
+- Created the Lofi designs for the Dashboard, Forecast, Create produce, create bunlde, Analytics and forecast pages
+- Created the supplier Dashboard page: HTML, CSS, javascript
+- Created the supplier Create Products page: HTML, CSS, javascript
+- Created the supplier Create Bundles page: HTML, CSS, javascript
+- Role front end
+
+Author: Daniel Jackson
+- Integrated the Authentication Mechanism into the Website
+  - Created a check to see if the access token is valid
+  - Created standard POST and GET methods with retry mechanisms
+- Created the Vendor Page
+  - Created Display for Vendor Information and Google Map Embed
+  - Created List of Available Bundles with Drop-Down for Product List
   
-  - Created the Lofi designs for the Dashboard, Forecast, Create produce, create bunlde, Analytics and forecast pages
-  - Created the supplier Dashboard page: HTML, CSS, javascript
-  - Created the supplier Create Products page: HTML, CSS, javascript
-  - Created the supplier Create Bundles page: HTML, CSS, javascript
-  - Role front end
-   }
-  }
 
 ## Testing
-- Author: Ivy Figari
+Author: Ivy Figari
 - {Description here}
 
 ## Documentation
 
 ---
 ### Ethical and Legal considerations (Maybe have other headings / change this)
-- Author: Oscar De Lemos
+Author: Oscar De Lemos
 - {Description here}
 ### other heading etc
 
