@@ -44,7 +44,31 @@ Repository configured To Pull from all Relevant repos for local deployment of en
 ## Website 
 - Author: Toby Becket
 - Co Authour: William Foulger
-- {Description here}
+- {
+  Author: Toby Beckett {
+  - My role was Team-Lead/Scrum-Master, Front end
+  - Created the Lofi Designs for the Login (supplier and user), register(Supplier and user), Orders, catalog, impact, and the report issue pages that are all on the user side of the website
+  - Created the user Login page: HTML, CSS and javascript
+  - Created the user Signup page: HTML, CSS and javascript
+  - Created the supplier Login page: HTML, CSS and javascript
+  - Created the supplier Signup page: HTML, CSS and javascript
+  - Created the users Catalog page: HTML, CSS and javascript
+  - Created the users Orders page: HTML, CSS and javascript
+  - Created the suppliers forecast page: HTML, CSS and javascript
+  - Created the index page: javascript and HTML
+  - Created the README file for the front end repository
+  - Being Team Lead, this included taking all the meeting notes and monitoring jira. This also included having frequent calls with the backend team to understand proguess and if any problems needed to be discussed in the coming team meeting.
+  }
+
+  Author: William Foulger {
+  
+  - Created the Lofi designs for the Dashboard, Forecast, Create produce, create bunlde, Analytics and forecast pages
+  - Created the supplier Dashboard page: HTML, CSS, javascript
+  - Created the supplier Create Products page: HTML, CSS, javascript
+  - Created the supplier Create Bundles page: HTML, CSS, javascript
+  - Role front end
+   }
+  }
 
 ## Testing
 - Author: Ivy Figari
