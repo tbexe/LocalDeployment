@@ -4,22 +4,24 @@ Repository configured To Pull from all Relevant repos for local deployment of en
 ---
 # Contributions
 
-### DevOps
+## DevOps
 Author: Jed Leas
 - My focus has been setting up the instances of the achirtecture designed by Daniel Jackson which included setting up the:
-  1. Nginx (Reverse proxy)
-  2. K3s
-  3. Postgres
-  4. RabbitMQ
-  5. Nginx (Website hosting)
+  - Nginx (Reverse proxy)
+  - K3s
+  - Postgres
+  - RabbitMQ
+  - Nginx (Website hosting)
 - As well as setting up all CI/CD workflows to handle 
-    1. Automatic testing on push of main branch on each microservices repo
-  2. Automatic Deployment onto k3s with zero downtime on compleation of automatic testing so broken code wont make it to deployment
+  - Automatic testing on push of main branch on each microservices repo
+  - Automatic Deployment onto k3s with zero downtime on compleation of automatic testing so broken code wont make it to deployment
 - And Sorting out bug fixes and connections between each microservices to eachother and the databases for both deployment and testings  
-               
-### Backend Services  
 
-#### API Gateway
+<br>
+
+## Backend Services  
+
+### API Gateway
 Author: Daniel Jackson
 - Setup this routing service to manage sending request to the right service, using pattern matching based on the URL.
 - Configured CORS so the production website and development environments can send requests to the backend.
@@ -28,8 +30,9 @@ Author: Daniel Jackson
   - Verifies token has not expired
   - Written explicit paths that are exempt from authentication (E.G Endpoint Documentation Website)  
 
+<br>
 
-#### User Service
+### User Service
 Author: Daniel Jackson
 - Setup Authentication Components:
   - Created Refresh and Access Token Generation using Secret Key
@@ -53,9 +56,12 @@ Author: Daniel Jackson
 - Enforced Controller-Service-Repository model to improve consistency across services for developers
 - Setup Spring Boot Profiles to manage configurations for production, development and testing environments
 
-#### Product Service 
+<br>
+
+### Product Service 
 Author: Robert Rainer
 
+<br>
 
 Co Author: Daniel Jackson
 - Led code structure discussions with Robert Rainer about using the MVC model
@@ -77,14 +83,15 @@ Co Author: Daniel Jackson
 - Added OpenAPI documentation to improve visibility of the backend for the front-end developers
 - Enforced Controller-Service-Repository model to improve consistency across services for developers 
 
- 
+ <br>
 
-#### Forecast Service
+### Forecast Service
 - Author: Alex Greasley
 - Co Author: Jed Leas
 - {Description here}
 
---- 
+<br>
+
 ## Website 
 Author: Toby Beckett 
 - My role was Team-Lead/Scrum-Master, Front end
@@ -100,12 +107,16 @@ Author: Toby Beckett
 - Created the README file for the front end repository
 - Being Team Lead, this included taking all the meeting notes and monitoring jira. This also included having frequent calls with the backend team to understand proguess and if any problems needed to be discussed in the coming team meeting.
 
+<br>
+
 Author: William Foulger 
 - Created the Lofi designs for the Dashboard, Forecast, Create produce, create bunlde, Analytics and forecast pages
 - Created the supplier Dashboard page: HTML, CSS, javascript
 - Created the supplier Create Products page: HTML, CSS, javascript
 - Created the supplier Create Bundles page: HTML, CSS, javascript
 - Role front end
+
+<br>
 
 Author: Daniel Jackson
 - Integrated the Authentication Mechanism into the Website
@@ -115,18 +126,23 @@ Author: Daniel Jackson
   - Created Display for Vendor Information and Google Map Embed
   - Created List of Available Bundles with Drop-Down for Product List
   
+<br>
 
 ## Testing
 Author: Ivy Figari
 - {Description here}
 
+<br>
+
 ## Documentation
 
----
-### Ethical and Legal considerations (Maybe have other headings / change this)
+<br>
+
+## Ethical and Legal considerations (Maybe have other headings / change this)
 Author: Oscar De Lemos
 - {Description here}
-### other heading etc
+
+<br>
 
 ---
 # Requirements For Testing
