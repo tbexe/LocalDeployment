@@ -137,6 +137,7 @@ Author: Daniel Jackson
 - Created the Vendor Page
   - Created Display for Vendor Information and Google Map Embed
   - Created List of Available Bundles with Drop-Down for Product List
+- Created Standard Header and Footer for all Web pages  
   
 <br>
 
