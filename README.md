@@ -95,10 +95,22 @@ Repository configured To Pull from all Relevant repos for local deployment of en
 
 ### Forecast Service
 **Author: Alex Greasley**
+- Created the scripts used for generating seeded data, simulating realistic user behaviour to establish trends for the ML models
+- Wrote scripts that cleaned and denormalised relational data to prepare it for bulk transfer into the production database
+- Developed the Machine Learning training pipeline, including data preprocessing, feature engineering, and the training of the Gradient Boosting classifiers used for predicting reservations and collections
+- Built the Forecast Service API, using FastAPI to create the /predict and /simulate endpoints and authorised them using JWT Auth
+- Integrated the Weather API to fetch historical data for model training and real-time conditions for predicting reservations and collections
+- Co-Developed unit and integration tests using pytest and FastAPI TestClient with Jed Leas.
 
 <br>
 
 **Author: Jed Leas**
+- Setting up all CI/CD workflows to handle 
+    1. Automatic testing on push of main branch on the forcast service repo
+  2. Automatic Deployment onto k3s with zero downtime on completion of automatic testing so broken code won't make it to deployment
+- And Sorting out bug fixes and connections between each microservice's to the forecast service and set up the connection to the postgre database
+- Co-Developed unit and integration tests using pytest and FastAPI TestClient with Alex Greasley.
+- Helped with bug fixing of Auth and Forecast service
 
 <br>
 
@@ -154,16 +166,28 @@ Repository configured To Pull from all Relevant repos for local deployment of en
 
 **Author: Daniel Jackson**
 - Wrote the Architecture descriptions
-- Created the Entity-Relationship Diagram
-- Created the overall backend architecture diagram
-- Wrote about each service and the overall data flow through our system
-- Wrote about architectural decisions we made and their impact
-- Explained the rationale behind choosing our languages and frameworks
+  - Created the Entity-Relationship Diagram
+  - Created the overall backend architecture diagram
+  - Wrote about each service and the overall data flow through our system
+  - Wrote about architectural decisions we made and their impact
+  - Explained the rationale behind choosing our languages and frameworks
 - Made the Software/Data Licensing document
 
 <br>
 
 **Author: Alex Greasley**
+- Wrote Data Seeding description
+  - Explained each tables generation
+  - Discussed early versions and improvements made
+  - Justified decisions made
+- Wrote Forecasting Model description
+  - Explained preprocessing techniques used
+  - Discussed previous models used and improvements made
+  - Justified decisions made
+  - Wrote about future plans for the forecasting models
+  - Highlighted areas for improvement
+- Wrote Process Evidence
+  - NOT DONE YET WILL WRITE HERE WHEN DONE
 
 <br>
 
